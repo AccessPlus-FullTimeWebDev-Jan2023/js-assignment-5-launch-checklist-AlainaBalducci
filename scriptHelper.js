@@ -1,5 +1,13 @@
 // Write your helper functions here!
+const pilotName = document.getElementById("pilotName");
+const copilotName = document.getElementById("copilotName");
+const fuelLevel = document.getElementById("fuelLevel");
+const cargoMass = document.getElementById("cargoMass");
+const testForm = document.getElementById("testForm");
+const launchForm = document.getElementById("launchForm");
+const formSubmit = document.getElementById("formSubmit");
 require('isomorphic-fetch');
+
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
@@ -17,8 +25,15 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-   
-}
+    numberInput = Number(testInput);
+    if (testInput === "") {
+      return "Empty";
+    } else if (isNaN(numberInput)) {
+      return "Not a number";
+    } else if (isNaN(numberInput) === false) {
+      return "Is a number";
+    }
+  }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    

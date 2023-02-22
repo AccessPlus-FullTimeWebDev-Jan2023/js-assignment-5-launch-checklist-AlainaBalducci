@@ -8,7 +8,7 @@
 // let fuelLevels = document.getElementById("fuelLevel");
 // let cargoMass = document.getElementById("cargoMass");
 
-// require("isomorphic-fetch");
+require("isomorphic-fetch");
 
 function addDestinationInfo( document, name, diameter, star, distance, moons, imageUrl
 ) {
@@ -84,7 +84,7 @@ async function myFetch() {
   let planetsReturned;
 
   planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function (response) {
-    response.json;
+   return response.json();
   });
 
   return planetsReturned;
@@ -96,8 +96,8 @@ function pickPlanet(planets) {
  return planets[randomPlanet];
 }
 
-// module.exports.addDestinationInfo = addDestinationInfo;
-// module.exports.validateInput = validateInput;
-// module.exports.formSubmission = formSubmission;
-// module.exports.pickPlanet = pickPlanet;
-// module.exports.myFetch = myFetch;
+module.exports.addDestinationInfo = addDestinationInfo;
+module.exports.validateInput = validateInput;
+module.exports.formSubmission = formSubmission;
+module.exports.pickPlanet = pickPlanet;
+module.exports.myFetch = myFetch;

@@ -83,13 +83,17 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
   let planetsReturned;
 
-  planetsReturned = await fetch().then(function (response) {});
+  planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function (response) {
+    response.json;
+  });
 
   return planetsReturned;
 }
-
+//math.Random <=0 less than 1. need to round (down? so we can get index 0?) and have enough numbers for planets (6) in the array of objects.
+//return the planet object at random indexes... 
 function pickPlanet(planets) {
-  Math.random()
+ let randomPlanet = Math.floor(Math.random()*planets.length);
+ return planets[randomPlanet];
 }
 
 // module.exports.addDestinationInfo = addDestinationInfo;

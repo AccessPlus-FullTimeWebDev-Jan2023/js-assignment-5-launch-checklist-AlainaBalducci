@@ -13,17 +13,18 @@
 function addDestinationInfo( document, name, diameter, star, distance, moons, imageUrl
 ) {
   // Here is the HTML formatting for our mission target div.
-  /*
-                <h2>Mission Destination</h2>
+  let missionDestination = document.getElementById("missionTarget");
+  missionDestination.innerHTML = 
+                `<h2>Mission Destination</h2>
                 <ol>
-                    <li>Name: </li>
-                    <li>Diameter: </li>
+                    <li>Name: ${name}</li>
+                    <li>Diameter: ${diameter}</li>
                     <li>Star: ${star}</li>
-                    <li>Distance from Earth: </li>
-                    <li>Number of Moons: </li>
+                    <li>Distance from Earth: ${distance}</li>
+                    <li>Number of Moons:${moons} </li>
                 </ol>
-                <img src="">
-   */
+                <img src="${imageUrl}">`
+   
 }
 
 function validateInput(testInput) {
@@ -49,10 +50,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
       console.log("help!!!")
   } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number" ) {
     alert("Make sure to enter valid information for each field!");
-  } else {
+  } else { //if all forms are filled in with appropriate values
     list.style.visibility = "visible";
     pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
-    copilotStatus.innerHTML = `Copilot ${copilot} is ready for launch`;
+    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
   }
   
   if (fuelLevel < 10000 && cargoLevel > 10000 ) {
@@ -87,7 +88,9 @@ async function myFetch() {
   return planetsReturned;
 }
 
-function pickPlanet(planets) {}
+function pickPlanet(planets) {
+  Math.random()
+}
 
 // module.exports.addDestinationInfo = addDestinationInfo;
 // module.exports.validateInput = validateInput;

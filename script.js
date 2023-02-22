@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
         form.addEventListener("submit", function (event) {
         event.preventDefault();
         
-        formSubmission(pilotName.value, copilotName.value, fuelLevels.value, cargoMass.value);
+        formSubmission(document, list, pilotName.value, copilotName.value, fuelLevels.value, cargoMass.value);
         
       });
         
